@@ -11,12 +11,12 @@ type PluginConfig = z.infer<typeof PluginConfigSchema>;
 // Create the plugin
 export function echoV2Plugin(config?: PluginConfig) {
   return genkitPluginV2({
-    name: "echo-plugin",
+    name: "echo-v2-plugin",
     init: async () => {
       // Create a simple model
       const pluginModel = model(
         {
-          name: "echo-plugin/echo",
+          name: "echo-v2-plugin/echo",
           supports: {
             media: false,
             tools: false,
@@ -41,7 +41,7 @@ export function echoV2Plugin(config?: PluginConfig) {
     list: async () => {
       return [
         {
-          name: "echo-plugin/echo",
+          name: "echo-v2-plugin/echo",
           type: "model",
           info: {
             label: "Echo Echo Plugin",
