@@ -9,7 +9,7 @@ const PluginConfigSchema = z.object({
 type PluginConfig = z.infer<typeof PluginConfigSchema>;
 
 // Create the plugin
-export function echoPlugin(config?: PluginConfig) {
+export function echoV2Plugin(config?: PluginConfig) {
   return genkitPluginV2({
     name: "echo-plugin",
     init: async () => {

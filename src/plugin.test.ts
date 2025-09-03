@@ -1,28 +1,28 @@
 import { test, describe } from "node:test";
 import assert from "node:assert";
-import { echoPlugin } from "./plugin";
+import { echoV2Plugin } from "./v2Plugin";
 
 describe("Echo Plugin", () => {
   test("should create plugin with default configuration", () => {
-    const plugin = echoPlugin();
+    const plugin = echoV2Plugin();
     assert.ok(plugin);
     assert.strictEqual(typeof plugin, "object");
   });
 
   test("should create plugin with custom configuration", () => {
     const customResponse = "Custom echo response";
-    const plugin = echoPlugin({ defaultResponse: customResponse });
+    const plugin = echoV2Plugin({ defaultResponse: customResponse });
     assert.ok(plugin);
     assert.strictEqual(typeof plugin, "object");
   });
 
   test("should have correct plugin name", () => {
-    const plugin = echoPlugin();
+    const plugin = echoV2Plugin();
     assert.strictEqual(plugin.name, "echo-plugin");
   });
 
   test("should initialize and return models", async () => {
-    const plugin = echoPlugin();
+    const plugin = echoV2Plugin();
     assert.ok(plugin.init, "Plugin should have init method");
     const models = await plugin.init!();
 
@@ -31,7 +31,7 @@ describe("Echo Plugin", () => {
   });
 
   test("should list available models", async () => {
-    const plugin = echoPlugin();
+    const plugin = echoV2Plugin();
     assert.ok(plugin.list, "Plugin should have list method");
     const models = await plugin.list!();
 
