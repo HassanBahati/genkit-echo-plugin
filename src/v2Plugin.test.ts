@@ -2,7 +2,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert";
 import { echoV2Plugin } from "./v2Plugin";
 
-describe("Echo Plugin", () => {
+describe("Echo V2 Plugin", () => {
   test("should create plugin with default configuration", () => {
     const plugin = echoV2Plugin();
     assert.ok(plugin);
@@ -18,7 +18,7 @@ describe("Echo Plugin", () => {
 
   test("should have correct plugin name", () => {
     const plugin = echoV2Plugin();
-    assert.strictEqual(plugin.name, "echo-plugin");
+    assert.strictEqual(plugin.name, "echo-v2-plugin");
   });
 
   test("should initialize and return models", async () => {
@@ -37,6 +37,6 @@ describe("Echo Plugin", () => {
 
     assert.ok(Array.isArray(models));
     assert.strictEqual(models.length, 1);
-    assert.strictEqual(models[0].name, "echo-plugin/echo");
+    assert.strictEqual(models[0].name, "echo-v2-plugin/echo");
   });
 });
