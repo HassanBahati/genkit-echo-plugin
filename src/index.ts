@@ -1,10 +1,10 @@
 import { genkit } from "genkit";
-import { mockEchoPlugin } from "./plugin";
+import { echoPlugin } from "./plugin";
 
 async function main() {
   const ai = genkit({
-    // plugins: [mockEchoPlugin({ defaultResponse: "Hellooooo!" })],
-    plugins: [mockEchoPlugin()],
+    // plugins: [echoPlugin({ defaultResponse: "Hellooooo!" })],
+    plugins: [echoPlugin()],
   });
 
   const response = await ai.generate({

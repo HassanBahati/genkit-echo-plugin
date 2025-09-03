@@ -9,14 +9,14 @@ const PluginConfigSchema = z.object({
 type PluginConfig = z.infer<typeof PluginConfigSchema>;
 
 // Create the plugin
-export function mockEchoPlugin(config?: PluginConfig) {
+export function echoPlugin(config?: PluginConfig) {
   return genkitPluginV2({
     name: "echo-plugin",
     init: async () => {
       // Create a simple model
       const pluginModel = model(
         {
-          name: "echo",
+          name: "echo-plugin/echo",
           supports: {
             media: false,
             tools: false,
@@ -41,7 +41,7 @@ export function mockEchoPlugin(config?: PluginConfig) {
     list: async () => {
       return [
         {
-          name: "mock/echo",
+          name: "echo-plugin/echo",
           type: "model",
           info: {
             label: "Echo Echo Plugin",
